@@ -1,0 +1,94 @@
+/* Body reset + modern Canva-style gradient */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* Canva-like blue shades */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Root container */
+#root {
+    width: 95%;
+    max-width: 1400px;
+    text-align: center;
+}
+
+/* Title styling */
+.title {
+    font-size: 2.2rem;
+    margin: 2px 0 8px 0;   /* top 2px, bottom 8px */
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+    animation: fadeInDown 1s ease;
+}
+
+/* Optional: shrink header gap */
+header {
+    margin-top: 0;
+    padding-top: 5px; /* very small breathing space */
+}
+
+/* Button styling */
+.join-btn {
+    background: #0077ff;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.join-btn:hover {
+    background: #005fcc;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Video grid layout */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* smaller tiles for more users */
+    gap: 12px;
+    margin-top: 20px;
+    justify-items: center;
+}
+
+/* Video tile styling */
+.tile {
+    width: 100%;
+    max-width: 220px; /* smaller so more users fit */
+    aspect-ratio: 16/9; /* consistent shape */
+    border-radius: 12px;
+    border: 3px solid #0077ff; /* clean blue border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    object-fit: cover;
+    animation: fadeInUp 0.8s ease;
+    background: #ff8800ab; /* fallback for empty video */
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
