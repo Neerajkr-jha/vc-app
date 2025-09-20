@@ -18,7 +18,7 @@ async function joinMeeting() {
     //for socket + webRtc
     socket = io();
     registerSocketEvents();
-    socket.emit('join-Meeting') //fire event
+    socket.emit('join-meeting') //fire event
 }
 
 function registerSocketEvents() {
